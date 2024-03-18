@@ -1,0 +1,22 @@
+{
+  "name": "json-highlight-api",
+  "version": "0.0.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/json-highlight-api.js",
+      "require": "./dist/json-highlight-api.umd.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "vite-plugin-dts": "3.7.3"
+  }
+}

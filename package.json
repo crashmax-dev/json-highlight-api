@@ -1,0 +1,15 @@
+{
+  "name": "@json-highlight-api/monorepo",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "turbo dev --filter=./apps/*",
+    "build": "turbo build --filter=./apps/*"
+  },
+  "devDependencies": {
+    "turbo": "1.12.5",
+    "typescript": "5.4.2",
+    "vite": "^5.1.6",
+    "vite-plugin-dts": "3.7.3"
+  }
+}
