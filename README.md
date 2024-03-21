@@ -17,7 +17,7 @@ import { highlightJson, injectHighlight } from 'json-highlight-api'
 const { style, destroy } = injectHighlight(/** override colors */)
 document.head.append(style)
 
-// remove style element and css highlights from `CSS.highlight`
+// remove the style element and css highlights from `CSS.highlights`
 // destroy()
 
 const pre = document.createElement('pre')
