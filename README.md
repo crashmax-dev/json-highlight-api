@@ -1,7 +1,7 @@
 # json-highlight-api
 
 > [!WARNING]
-> This package use (CSS Custom Highlight API)[https://developer.mozilla.org/en-US/docs/Web/API/CSS_Custom_Highlight_API]
+> This package use [CSS Custom Highlight API](https://developer.mozilla.org/en-US/docs/Web/API/CSS_Custom_Highlight_API)
 
 ## Install
 
