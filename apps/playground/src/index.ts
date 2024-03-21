@@ -1,11 +1,11 @@
-import { generateHighlightStyle, highlightJson } from 'json-highlight-api'
+import { highlightJson, injectHighlight } from 'json-highlight-api'
 import { el } from 'zero-dependency'
 
 import './index.css'
 
 const app = document.querySelector<HTMLDivElement>('#app')!
 
-const { style, destroy } = generateHighlightStyle()
+const { style /*, destroy*/ } = injectHighlight()
 document.head.append(style)
 
 const jsons = [
