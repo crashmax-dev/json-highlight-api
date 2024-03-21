@@ -7,9 +7,20 @@ body {
   background-color: #333;
 }
 
+:root {
+  --highlight-wrap: pre-wrap;
+  --highlight-background: #1e1e1e;
+  --highlight-color: #d4d4d4;
+}
+
 pre {
   margin: 1rem;
   padding: 1rem;
   font-size: 1rem;
   border-radius: 1rem;
+
+  overflow: auto;
+  color: var(--highlight-color);
+  background: var(--highlight-background);
+  white-space: var(--highlight-wrap);
 }

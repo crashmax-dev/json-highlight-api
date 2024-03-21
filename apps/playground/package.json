@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "json-highlight-api": "workspace:*"
+    "json-highlight-api": "workspace:*",
+    "zero-dependency": "0.9.7"
   }
 }

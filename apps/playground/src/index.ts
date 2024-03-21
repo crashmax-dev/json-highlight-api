@@ -1,34 +1,48 @@
-import { highlightJson, generateHighlightStyle } from "json-highlight-api";
-import "./index.css";
+import { generateHighlightStyle, highlightJson } from 'json-highlight-api'
+import { el } from 'zero-dependency'
 
-const app = document.querySelector<HTMLDivElement>("#app")!;
+import './index.css'
 
-const json = {
-  a: "string",
-  b: 111,
-  c: false,
-  d: true,
-  e: null,
-  f: {
-    ww: "kkk",
-    qq: [1, 2, 3],
-    rr: { t: "awt" },
-  },
-  g: '<p>hello world</p> with \n <p>new line</p> and quote sign: "',
-};
+const app = document.querySelector<HTMLDivElement>('#app')!
 
-const style = generateHighlightStyle({
-  colors: { falseColor: "#f44747" },
-});
-document.head.append(style);
+const { style, destroy } = generateHighlightStyle()
+document.head.append(style)
 
-const code = document.createElement("code");
-const pre = document.createElement("pre");
-pre.style.background = "#1e1e1e";
-pre.style.color = "#d4d4d4";
-pre.style.overflow = "auto";
-pre.textContent = JSON.stringify(json, null, 2);
-code.append(pre);
-app.append(code);
+const jsons = [
+  createHighlightElement({
+    a: 'string',
+    b: 111,
+    c: false,
+    d: true,
+    e: null,
+    f: {
+      aa: '',
+      ww: 'kkk',
+      qq: [
+        1,
+        2,
+        3
+      ],
+      rr: { t: 'awt' }
+    },
+    g: '<p>hello world</p> with \n <p>new line</p> and quote sign: "'
+  }),
+  createHighlightElement({
+    aboba: 'hello',
+    a: 1,
+    b: null,
+    c: true
+  })
 
-highlightJson(pre);
+]
+
+for (const json of jsons) {
+  highlightJson(json)
+}
+
+function createHighlightElement(json: any): HTMLElement {
+  const pre = el('pre', JSON.stringify(json, null, 2))
+  const code = el('code', pre)
+  app.append(code)
+  return pre
+}

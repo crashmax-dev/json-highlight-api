@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "turbo dev --filter=./apps/*",
-    "build": "turbo build --filter=./apps/*"
+    "build": "turbo build --filter=./apps/*",
+    "format": "prettier --write \"**/*.{js,ts,tsx,json}\""
   },
   "devDependencies": {
+    "@crashmax/prettier-config": "5.0.2",
     "turbo": "1.12.5",
     "typescript": "5.4.2",
     "vite": "^5.1.6",
